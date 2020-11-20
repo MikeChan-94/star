@@ -25,15 +25,21 @@ dependencies {
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.4.0'
-    compile group: 'com.alibaba', name: 'druid', version: '1.2.3'
-    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
-    // https://mvnrepository.com/artifact/redis.clients/jedis
+    //  druid
+//    compile group: 'com.alibaba', name: 'druid', version: '1.2.3'
+    compile group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.2.3'
+    //  jedis
     compile group: 'redis.clients', name: 'jedis', version: '3.3.0'
-
-
-
-
+    //  mysql
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
+    //  mybatis-plus
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.4.1'
+    compile group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.4.1'
+    //  模板引擎
+    compile group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.2'
+    //  swagger
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 }
 
 test {
