@@ -2,6 +2,9 @@ package com.mikechen.star.service;
 
 import com.mikechen.star.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.mikechen.star.mapper.UserMapper;
+import com.mikechen.star.vo.UserVO;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<User> {
 
+    void add(UserVO userVO);
+
+    User getUserById(Integer id);
 }

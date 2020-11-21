@@ -40,6 +40,8 @@ dependencies {
     //  swagger
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+    // hutool
+    compile group: 'cn.hutool', name: 'hutool-all', version: '5.5.1'
 
 }
 
