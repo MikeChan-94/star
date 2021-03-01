@@ -42,6 +42,9 @@ dependencies {
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
     // hutool
     compile group: 'cn.hutool', name: 'hutool-all', version: '5.5.1'
+    // https://mvnrepository.com/artifact/com.ctrip.framework.apollo/apollo-client
+    implementation group: 'com.ctrip.framework.apollo', name: 'apollo-client', version: '1.8.0'
+
 
 }
 
