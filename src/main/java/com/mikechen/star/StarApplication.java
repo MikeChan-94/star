@@ -1,5 +1,6 @@
 package com.mikechen.star;
 
+import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,6 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ServletComponentScan
 @MapperScan("com.mikechen.star.mapper")
 @EnableSwagger2
+@EnableApolloConfig
 public class StarApplication {
 
     public static void main(String[] args) {

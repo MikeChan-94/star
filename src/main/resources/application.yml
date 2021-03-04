@@ -1,7 +1,10 @@
 server:
   port: 8080
 
+# 数据源
 spring:
+  application:
+    name: star
   datasource:
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
@@ -10,7 +13,7 @@ spring:
     username: root
     password: 123456
     druid:
-      #数据库连接池配置
+      # 数据库连接池配置
       initial-size: 5
       min-idle: 5
       max-active: 20
@@ -18,7 +21,7 @@ spring:
       web-stat-filter:
         enabled: true
         url-pattern:
-      #监控配置
+      # 监控配置
       stat-view-servlet:
         enabled: true
         url-pattern: /druid/
@@ -35,7 +38,7 @@ spring:
       test-on-return: false
       pool-prepared-statements: true
 
-  #配置redis
+  # 配置redis
   redis:
     host: 127.0.0.1
     port: 6380
@@ -51,8 +54,19 @@ spring:
     timeout:
     connect-timeout:
 
+# mybatis-plus
 mybatis-plus:
   configuration:
     #查看执行sql语句
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     mapper-locations: classpath*:/com/mikechen/star/mapper/xml/*.xml
+
+# apollo配置中心，env指定查找参数的环境
+app:
+  id: star
+apollo:
+  meta: http://127.0.0.1:8080
+  bootstrap:
+    enabled: true
+    eagerLoad:
+      enabled: true
