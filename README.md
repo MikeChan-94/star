@@ -31,3 +31,5 @@ Feign
 
 #分库分表
 Sharding jdbc
+#降级
+Sentinel
