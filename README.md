@@ -2,6 +2,7 @@
 Cannal
 #配置中心
 Apollo
+nacos
 #服务治理
 1.SpringCloud
 #Spring Cloud 组件运行：
@@ -24,12 +25,18 @@ Logstash
 Kibana
 Beats
 #降级
-Hystrix
+Sentinel
+#Hystrix
 #负载均衡
 Feign
 #分布式事务
 
 #分库分表
 Sharding jdbc
-#降级
-Sentinel
+#注册中心
+nacos
+eureka
+#日志
+log4j2
+#微服务下的统一身份认证和授权
+https://www.jianshu.com/p/2571f6a4e192
