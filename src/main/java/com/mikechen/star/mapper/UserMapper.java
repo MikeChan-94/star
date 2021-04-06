@@ -1,16 +1,44 @@
 package com.mikechen.star.mapper;
 
 import com.mikechen.star.entity.User;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 用户表 Mapper 接口
- * </p>
- *
- * @author chenweijian
- * @since 2020-11-21
- */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper {
+
+    /**
+    *  查询表user所有信息
+    */
+    List<User> findAllUser();
+
+    /**
+    *  根据主键id查询表user信息
+    *  @param id
+    */
+    User findUserByid(@Param("id") Integer id);
+
+    /**
+    *  根据条件查询表user信息
+    *  @param user
+    */
+    List<User> findUserByCondition(User user);
+
+    /**
+    *  根据主键id查询表user信息
+    *  @param id
+    */
+    Integer deleteUserByid(@Param("id") Integer id);
+
+    /**
+    *  根据主键id更新表user信息
+    *  @param user
+    */
+    Integer updateUserByid(User user);
+
+    /**
+    *  新增表user信息
+    *  @param user
+    */
+    Integer addUser(User user);
 
 }

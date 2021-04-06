@@ -1,22 +1,44 @@
 package com.mikechen.star.service;
 
 import com.mikechen.star.entity.User;
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.mikechen.star.mapper.UserMapper;
-import com.mikechen.star.vo.UserVO;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 用户表 服务类
- * </p>
- *
- * @author chenweijian
- * @since 2020-11-21
- */
-public interface UserService extends IService<User> {
+import java.util.List;
 
-    void add(UserVO userVO);
+public interface UserService {
 
-    User getUserById(Integer id);
+    /**
+    *  查询表user所有信息
+    */
+    List<User> findAllUser();
+
+    /**
+    *  根据主键id查询表user信息
+    *  @param id
+    */
+    User findUserByid(@Param("id") Integer id);
+
+    /**
+    *  根据条件查询表user信息
+    *  @param user
+    */
+    List<User> findUserByCondition(User user);
+
+    /**
+    *  根据主键id查询表user信息
+    *  @param id
+    */
+    Integer deleteUserByid(@Param("id") Integer id);
+
+    /**
+    *  根据主键id更新表user信息
+    *  @param user
+    */
+    Integer updateUserByid(User user);
+
+    /**
+    *  新增表user信息
+    *  @param user
+    */
+    Integer addUser(User user);
 }

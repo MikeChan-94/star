@@ -1,42 +1,71 @@
 package com.mikechen.star.service.impl;
 
-import cn.hutool.core.date.DateUtil;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.mikechen.star.entity.User;
 import com.mikechen.star.mapper.UserMapper;
 import com.mikechen.star.service.UserService;
-import com.mikechen.star.vo.UserVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.ibatis.annotations.Param;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.List;
 
-/**
- * <p>
- * 用户表 服务实现类
- * </p>
- *
- * @author chenweijian
- * @since 2020-11-21
- */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
 
+    /**
+    *  查询表user所有信息
+    */
     @Override
-    public void add(UserVO userVO) {
-        User user = new User();
-        user.setName(userVO.getName());
-        user.setCreateTime(DateUtil.date());
-        user.setUpdateTime(DateUtil.date());
-        userMapper.insert(user);
+    public List<User> findAllUser() {
+        return userMapper.findAllUser();
     }
 
+    /**
+    *  根据主键id查询表user信息
+    *  @param id
+    */
     @Override
-    public User getUserById(Integer id) {
-        return userMapper.selectById(id);
+    public User findUserByid(@Param("id") Integer id) {
+        return userMapper.findUserByid(id);
     }
+
+    /**
+    *  根据条件查询表user信息
+    *  @param user
+    */
+    @Override
+    public List<User> findUserByCondition(User user) {
+        return userMapper.findUserByCondition(user);
+    }
+
+    /**
+    *  根据主键id查询表user信息
+    *  @param id
+    */
+    @Override
+    public Integer deleteUserByid(@Param("id") Integer id) {
+        return userMapper.deleteUserByid(id);
+    }
+
+    /**
+    *  根据主键id更新表user信息
+    *  @param user
+    */
+    @Override
+    public Integer updateUserByid(User user) {
+        return userMapper.updateUserByid(user);
+    }
+
+    /**
+    *  新增表user信息
+    *  @param user
+    */
+    @Override
+    public Integer addUser(User user) {
+        return userMapper.addUser(user);
+    }
+
 }

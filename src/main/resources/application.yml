@@ -59,14 +59,14 @@ mybatis-plus:
   configuration:
     #查看执行sql语句
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    mapper-locations: classpath*:/com/mikechen/star/mapper/xml/*.xml
+  mapper-locations: classpath*:mybatis/*.xml
 
 # apollo配置中心，env指定查找参数的环境
-app:
-  id: star
-apollo:
-  meta: http://127.0.0.1:8080
-  bootstrap:
-    enabled: true
-    eagerLoad:
-      enabled: true
+#app:
+#  id: star
+#apollo:
+#  meta: http://127.0.0.1:8080
+#  bootstrap:
+#    enabled: true
+#    eagerLoad:
+#      enabled: true

@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ServletComponentScan
 @MapperScan("com.mikechen.star.mapper")
 @EnableSwagger2
-@EnableApolloConfig
+//@EnableApolloConfig
 @EnableAsync
 public class StarApplication {
 
